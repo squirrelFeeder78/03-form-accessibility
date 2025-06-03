@@ -36,42 +36,47 @@
         Reserve your seat and embark on a surprise culinary adventure.
       </p>
       <div class="reservation-card">
-        <h2>Reserve Now</h2>
+        <h2 id="reserve-now-heading">Reserve Now</h2>
         <div class="form-placeholder">
-          <form>
+          <form aria-labelledby="reserve-now-heading">
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Name">
+              <label for="name" class="form-label visually-hidden">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name" required aria-required="true" autofocus>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Email">
+              <label for="email" class="form-label visually-hidden">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required aria-required="true" autocomplete="email">
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Zip">
+              <label for="zip" class="form-label visually-hidden">Zip Code</label>
+              <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip" required aria-required="true" pattern="[0-9]{5}" inputmode="numeric" autocomplete="postal-code">
             </div>
             <div class="mb-3">
-              <input type="number" class="form-control" placeholder="Party Size">
+              <label for="party-size" class="form-label visually-hidden">Party Size</label>
+              <input type="number" class="form-control" id="party-size" name="party-size" placeholder="Party Size" min="1" required aria-required="true">
             </div>
             <div class="mb-3">
-              <select class="form-select">
-                <option selected>Choose...</option>
+              <label for="spice-level" class="form-label visually-hidden">Preferred Spice Level</label>
+              <select class="form-select" id="spice-level" name="spice-level" aria-label="Preferred Spice Level" required aria-required="true">
+                <option value="" selected disabled>Choose...</option>
                 <option value="mild">Mild</option>
                 <option value="med">Medium</option>
                 <option value="spicy">Spicy</option>
               </select>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox">
-              <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" id="birthday-cake" name="birthday-cake">
+              <label class="form-check-label" for="birthday-cake">
                 Would you like to pretend it's your birthday for free cake?
               </label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox">
-              <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" id="accept-unknown" name="accept-unknown" required aria-required="true">
+              <label class="form-check-label" for="accept-unknown">
                 I accept that I have no idea where I'll dine, and that's OK.
               </label>
             </div>
-            <a href="#" class="btn btn-lg btn-primary">Book My Mystery Meal!</a>
+            <button type="submit" class="btn btn-lg btn-primary">Book My Mystery Meal!</button>
           </form>
         </div>
       </div>
